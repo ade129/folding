@@ -130,6 +130,7 @@
                 {{-- <li id="menu_customers"><a href="{{url('customers/')}}"><i class=""></i> <span>Customer</span></a></li> --}}
                 <li id="menu_bestproducts"><a href="{{url('bestproducts/')}}"><i class="fa fa-thumbs-up"></i> <span>Best Products</span></a></li>
                 <li id="menu_premiums"><a href="{{url('premiums/')}}"><i class="fa fa-star"></i> <span>Premiums Products</span></a></li>
+                <li id="menu_slideshow"><a href="{{url('slideshow/')}}"><i class="fa fa-star"></i> <span>Slideshow</span></a></li>
               </ul>
     </section>
     

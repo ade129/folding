@@ -59,6 +59,8 @@ class BestproductsController extends Controller
 
         $saveBproducts = new Bestproducts;
         $saveBproducts->name = $request->name;
+        $saveBproducts->jenis = $request->jenis;
+        $saveBproducts->type = $request->type;
         $saveBproducts->slug = $slug = Str::slug($request->name, '-');
         $saveBproducts->description = $request->description; 
         // return $saveBproducts;

@@ -11,6 +11,7 @@ use App\Models\Images;
 use App\Models\Customers;
 use App\Models\Premiums;
 use App\Models\Bestproducts;
+use App\Models\Slideshow;
 
 class HomeController extends Controller
 {
@@ -21,6 +22,7 @@ class HomeController extends Controller
         $cust = Customers::all();
         $prem = Premiums::all();
         $best = Bestproducts::all();
+        $slide = Slideshow::all();
         $contents = [
             'products' => Products::with(['categories','images'])->get(), 
             'abouts' => $about,
@@ -28,7 +30,10 @@ class HomeController extends Controller
             'customers' => $cust,
             'premiums' => $prem,
             'bestproducts' => $best,
+            'slideshow' => $slide,
         ];
+        // return $contents;
+
         $pagecontent = view('Frontend.home.index', $contents);
 
         // masterpage
@@ -106,6 +111,28 @@ class HomeController extends Controller
         // return $contents;
 
         $pagecontent = view('Frontend.home.premdetail', $contents);
+
+        // return $pagecontent;
+        $pagemain = array(
+            'title' => 'Detail Products',
+            'pagecontent' => $pagecontent
+        );
+        
+        return view('Frontend.masterpage_frontend', $pagemain);
+    }
+
+    public function bestproducts($slug)
+    {
+        // return $slug;
+        $best = Bestproducts::where('slug',$slug)->first();
+        // return $prem;
+
+        $contents = [
+            'bestproducts' => $best,
+        ];
+        // return $contents;
+
+        $pagecontent = view('Frontend.home.bestproducts', $contents);
 
         // return $pagecontent;
         $pagemain = array(

@@ -97,13 +97,14 @@
 			<div class="slider text-center">
 			   <div class="callbacks_container">
 				  <ul class="rslides" id="slider4">
+					  @foreach ($slideshow as $slide)
 					 <li>
-						<div class="slider-img one-img">
+						<div class="slider-img one-img" src="{{asset('porducts_images')}}/{{$slide->images }}">
 						   <div class="container">
 							  <div class="slider-info ">
-								 <h5>Pick The Best Toy For <br>Your Kid</h5>
+								 <h5>{{$slide->name}} <br>{{$slide->fungsi}}</h5>
 								 <div class="bottom-info">
-									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Aenean commodo ligula eget dolorL orem ipsum dolor sit amet eget dolor</p>
+								 <p>{{$slide->desc}}</p>
 								 </div>
 								 <div class="outs_more-buttn">
 									<a href="about.html">Read More</a>
@@ -112,36 +113,7 @@
 						   </div>
 						</div>
 					 </li>
-					 <li>
-						<div class="slider-img two-img">
-						   <div class="container">
-							  <div class="slider-info ">
-								 <h5>Sort Toys And Teddy bears<br>For Kids</h5>
-								 <div class="bottom-info">
-									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Aenean commodo ligula eget dolorL orem ipsum dolor sit amet eget dolor</p>
-								 </div>
-								 <div class="outs_more-buttn">
-									<a href="about.html">Read More</a>
-								 </div>
-							  </div>
-						   </div>
-						</div>
-					 </li>
-					 <li>
-						<div class="slider-img three-img">
-						   <div class="container">
-							  <div class="slider-info">
-								 <h5>Best Toys And Dolls<br> For Kids</h5>
-								 <div class="bottom-info">
-									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Aenean commodo ligula eget dolorL orem ipsum dolor sit amet eget dolor</p>
-								 </div>
-								 <div class="outs_more-buttn">
-									<a href="about.html">Read More</a>
-								 </div>
-							  </div>
-						   </div>
-						</div>
-					 </li>
+					 @endforeach
 				  </ul>
 			   </div>
 			   <!-- This is here just to demonstrate the callbacks -->
@@ -209,7 +181,7 @@
 					 <p><font color="white" size="5">{{$best->description}} 
 						</font></p>
 						<div class="clients_more-buttn">
-						   <a href="shop.html" class="mb-0">Shop Now</a>
+						   <a href="{{url('home/bestproducts/'. $best->slug)}}" class="mb-0">Shop Now</a>
 						</div>
 					 </div>
 				  </div>
@@ -266,7 +238,7 @@
 					 <a href="tel:+6281219178358"></a>
 					 @foreach ($abouts as $about)
 					 <p> {{$about->nomortelepon}}</p>
-					 <p class="fas fa-whatsapp" style="background-color:#ff6347;"><font size="6">{{$about->whatsapp}}</font></p>
+					 <p class="fab fa-whatsapp" style="background-color:#ff6347;"><font size="6">{{$about->whatsapp}}</font></p>
 					 @endforeach
 				  </div>
 				  <div class=" address-gried mt-3">

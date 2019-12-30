@@ -171,7 +171,7 @@
 		 <!-- start-smoth-scrolling -->
 		 <!-- here stars scrolling icon -->
 		 <script>
-			$(document).ready(function () {
+			$(document).retopady(function () {
 			
 				var defaults = {
 					containerID: 'toTop', // fading element id

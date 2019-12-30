@@ -1,12 +1,12 @@
 <section class="content-header">
     <h1>
-        Best products
+        Slideshow
         <small>Master</small>
     </h1>
     <ol class="breadcrumb">
         <li><a href="{{url('/home')}}"><i class="fa fa-dashboard"></i>Home</a>
         <li class="active"><i class="fa fa-database"></i>Mater</a>
-        <li><a href="{{url('/bestproducts')}}"><i class="fa fa-cubes"></i>Best Products</a>
+        <li><a href="{{url('/slideshow')}}"><i class="fa fa-cubes"></i>Slideshow</a>
         <li class="active"><i class="fa fa-plus"></i>Create New</a>
     </ol>
 </section>
@@ -23,7 +23,7 @@
                 <h3 class="box-title">Create New</h3> 
               </div>
               <div class="box-body">
-                {{ Form::open(array('url' => 'bestproducts/create-new', 'class' => 'form-horizontal','files' => 'true')) }}
+                {{ Form::open(array('url' => 'slideshow/create-new', 'class' => 'form-horizontal','files' => 'true')) }}
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Name</label>
                   <div class="col-sm-5">
@@ -33,19 +33,11 @@
                 </div>
 
                 <div class="form-group">
-                  <label class="col-sm-2 control-label">Jenis</label>
-                  <div class="col-sm-5">
-                    <!-- {{-- name:name untuk melempar controller ke database --}} -->
-                    <input type="text" class="form-control" placeholder="Jenis" name="jenis" required>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="col-sm-2 control-label">Type</label>
-                  <div class="col-sm-5">
-                    <!-- {{-- name:name untuk melempar controller ke database --}} -->
-                    <input type="text" class="form-control" placeholder="Type" name="type" required>
-                  </div>
+                    <label class="col-sm-2 control-label">Fungsi</label>
+                    <div class="col-sm-5">
+                      <!-- {{-- name:name untuk melempar controller ke database --}} -->
+                      <input type="text" class="form-control" placeholder="jenis" name="fungsi" required>
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -60,7 +52,7 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Description</label>
                     <div class="col-sm-5">
-                        <textarea name="description" rows="3" id="description" class="form-control" required></textarea>
+                        <textarea name="desc" rows="3" id="description" class="form-control" required></textarea>
                     </div>
                   </div>
 
@@ -68,7 +60,7 @@
                 <div class="form-group">
                   <label class="col-sm-2 control-label"></label>
                   <div class="col-sm-5">
-                    <a href="{{url('bestproducts')}}" class="btn btn-warning pull-right">Back</a>
+                    <a href="{{url('slideshow')}}" class="btn btn-warning pull-right">Back</a>
                     <input type="submit" value="Save" class="btn btn-primary">
                   </div>
                 </div>
